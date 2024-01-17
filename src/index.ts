@@ -5,6 +5,28 @@ import {
 
 import { requestAPI } from './handler';
 
+
+
+import {
+  DOMWidgetModel,
+  DOMWidgetView,
+  ISerializers,
+  WidgetModel
+} from '@jupyter-widgets/base';
+
+export class EmailView extends DOMWidgetView {
+  render() {
+    this.el.classList.add('custom-widget');
+    this.value_changed();
+    this.model.on('change:value', this.value_changed, this);
+  }
+
+  value_changed() {
+    this.el.textContent = this.model.get('value');
+  }
+}
+
+
 /**
  * Initialization data for the myextension extension.
  */

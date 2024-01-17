@@ -51,6 +51,7 @@
         "watch:labextension": "jupyter labextension watch ."
     },
     "dependencies": {
+        "@jupyter-widgets/base-manager": "^1.0.7",
         "@jupyterlab/application": "^4.0.0",
         "@jupyterlab/coreutils": "^6.0.0",
         "@jupyterlab/services": "^7.0.0"
@@ -90,14 +91,14 @@
     },
     "jupyterlab": {
         "discovery": {
-        "server": {
-            "managers": [
-                "pip"
-            ],
-            "base": {
-                "name": "myextension"
+            "server": {
+                "managers": [
+                    "pip"
+                ],
+                "base": {
+                    "name": "myextension"
+                }
             }
-        }
         },
         "extension": true,
         "outputDir": "myextension/labextension"
